@@ -252,12 +252,17 @@ func main() {
 		})
 	}
 
-	for i, item := range items {
+	count := 0
+	for _, item := range items {
+		count++
 		fmt.Print(item.Key, ":", item.Value)
-		if i%4 == 0 && i != 0 {
+		if count%5 == 0 {
 			fmt.Println()
 		} else {
 			fmt.Print(" ")
 		}
 	}
+
+	fmt.Println("\n\nPress Enter to exit...")
+	fmt.Scanln()
 }
