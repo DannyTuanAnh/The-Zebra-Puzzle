@@ -2,7 +2,13 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
+
+type Item struct {
+	Key   string
+	Value int
+}
 
 var result []map[string]int
 
@@ -231,13 +237,27 @@ func main() {
 
 	if AC3(arc, variables) {
 		fmt.Println("Using MAC in backtrack")
+		fmt.Println("Result:")
 		BacktrackingSearch(variables, arc, assignment, graphArc)
 	}
 
+	items := make([]Item, 0)
 	for _, solution := range result {
-		for variable, value := range solution {
-			fmt.Print(variable, ":", value, " ")
+		for key, value := range solution {
+			items = append(items, Item{Key: key, Value: value})
 		}
-		fmt.Println()
+
+		sort.Slice(items, func(i, j int) bool {
+			return items[i].Value < items[j].Value
+		})
+	}
+
+	for i, item := range items {
+		fmt.Print(item.Key, ":", item.Value)
+		if i%4 == 0 && i != 0 {
+			fmt.Println()
+		} else {
+			fmt.Print(" ")
+		}
 	}
 }
