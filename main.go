@@ -236,7 +236,9 @@ func main() {
 	assignment := map[string]int{}
 
 	if AC3(arc, variables) {
-		fmt.Println("Using MAC in backtrack")
+		fmt.Println("Domain of each variable after using AC3:")
+		fmt.Println(variables)
+		fmt.Println("\nUsing MAC in backtrack")
 		fmt.Println("Result:")
 		BacktrackingSearch(variables, arc, assignment, graphArc)
 	}
