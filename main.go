@@ -243,13 +243,9 @@ func main() {
 	}
 
 	fmt.Println("Result:")
-	answer := make(map[string]int)
 	items := make([]Item, 0)
 	for _, solution := range result {
 		for key, value := range solution {
-			if key == "Zebra" || key == "Water" {
-				answer[key] = value
-			}
 			items = append(items, Item{Key: key, Value: value})
 		}
 
@@ -269,8 +265,8 @@ func main() {
 		}
 	}
 
-	fmt.Printf("\nThe owner of the zebra lives in house %d.\n", answer["Zebra"])
-	fmt.Printf("The owner who drinks water lives in house %d.\n", answer["Water"])
+	fmt.Printf("\nThe owner of the zebra lives in house %d.\n", result[0]["Zebra"])
+	fmt.Printf("The owner who drinks water lives in house %d.\n", result[0]["Water"])
 
 	fmt.Println("\n\nPress Enter to exit...")
 	fmt.Scanln()
