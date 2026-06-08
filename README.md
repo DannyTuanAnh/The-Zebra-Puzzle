@@ -1,91 +1,91 @@
 # The Zebra Puzzle (Einstein's Riddle)
 
-Đây là một chương trình giải quyết **The Zebra Puzzle** - bài toán logic nổi tiếng được gọi là **Einstein's Riddle**.
+This is a program to solve **The Zebra Puzzle**, a famous logic puzzle also known as **Einstein's Riddle**.
 
-## Mô tả bài toán
+## Description
 
-Bài toán này liên quan đến việc xác định ai sở hữu con ngựa vằn và ai uống nước, dựa trên một tập hợp các gợi ý logic.
+This puzzle requires you to answer "Who owns the Zebra? Who drinks Water?" based on a set of logical clues.
 
-**5 ngôi nhà** với các đặc điểm:
+**5 Houses** with the following characteristics:
 
-- **Màu sắc**: Vàng, Xanh lam, Đỏ, Xanh lá, Ngà
-- **Quốc tịch**: Anh, Tây Ban Nha, Ukraina, Na Uy, Nhật Bản
-- **Thú cưng**: Ngựa, Chó, Ốc sên, Cáo, Ngựa vằn
-- **Đồ uống**: Cà phê, Trà, Sữa, Nước cam, Nước
-- **Thuốc lá**: Old Gold, Kools, Chesterfields, Parliaments, Lucky Strike
+- **Colors**: Yellow, Blue, Red, Green, Ivory
+- **Nationalities**: Britt, Spanish, Ukrainian, Norwegian, Japanese
+- **Pets**: Horse, Dog, Snails, Fox, Zebra
+- **Drinks**: Coffee, Tea, Milk, Orange Juice, Water
+- **Tobaccos**: Old Gold, Kools, Chesterfields, Parliaments, Lucky Strike
 
-## Hướng dẫn chạy chương trình
+## How to Run the Program
 
-### Yêu cầu
+### Requirements
 
-- Go 1.16 hoặc cao hơn nếu chạy trực tiếp từ file Go
+- Go 1.16 or higher if running directly from Go source files
 
-### Cách 1: Chạy file thực thi
+### Method 1: Run the Executable File
 
-#### Trên Windows
+#### On Windows
 
-1. Mở Command Prompt hoặc PowerShell
-2. Di chuyển đến thư mục chứa file thực thi
-3. Chạy lệnh:
+1. Open Command Prompt or PowerShell
+2. Navigate to the directory containing the executable file
+3. Run the command:
 
 ```bash
 .\the-zebra-puzzle.exe
 ```
 
-Hoặc đơn giản: Double-click vào file `the-zebra-puzzle.exe`
+Or simply: Double-click the `the-zebra-puzzle.exe` file
 
-#### Trên Mac
+#### On Mac
 
-1. Mở Terminal
-2. Di chuyển đến thư mục chứa file thực thi (thay thế bằng đường dẫn thực tế):
+1. Open Terminal
+2. Navigate to the directory containing the executable file (replace with your actual path):
 
 ```bash
 cd ~/path/to/The\ Zebra\ Puzzle
 ```
 
-Ví dụ: Nếu file nằm trong thư mục Downloads:
+Example: If the file is in the Downloads folder:
 
 ```bash
 cd ~/Downloads/The\ Zebra\ Puzzle
 ```
 
-3. Cấp quyền chạy file (chỉ cần làm một lần):
+3. Grant execute permission (only need to do this once):
 
 ```bash
 chmod +x the-zebra-puzzle
 ```
 
-4. Chạy chương trình:
+4. Run the program:
 
 ```bash
 ./the-zebra-puzzle
 ```
 
-### Cách 2: Chạy trực tiếp từ Go
+### Method 2: Run Directly from Go
 
 ```bash
 go run .
 ```
 
-hoặc
+or
 
 ```bash
 go run main.go
 ```
 
-## Kết quả đầu ra
+## Output
 
-Chương trình sẽ:
+The program will:
 
-1. **Áp dụng AC3** - Giảm miền giá trị của các biến bằng cách loại bỏ các giá trị không tương thích
-2. **Sử dụng Backtracking Search với MAC + MRV + Degree + LCV** - Tìm giải pháp thỏa mãn tất cả các ràng buộc
-3. **In kết quả** - Hiển thị các biến được sắp xếp theo thứ tự vị trí (1-5)
+1. **Apply AC3** - Reduce the domain of variables by removing incompatible values
+2. **Use Backtracking Search with MAC + MRV + Degree + LCV** - Find a solution that satisfies all constraints
+3. **Display Results** - Show variables sorted by house position (1-5)
 
-### Ví dụ kết quả:
+### Example Output:
 
 ```
 Domain of each variable after using AC3:
-[In ra miền giá trị của mỗi biến sau khi được cắt giảm]
+[Shows the domain of each variable after reduction]
 
 Using MAC in backtrack
 Result:
